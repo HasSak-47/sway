@@ -16,7 +16,7 @@ set $right l
 # Your preferred terminal emulator
 # Recommends: foot
 #TODO change to ghostty
-set $term kitty
+set $term kitty -d $HOME
 # Your preferred application launcher
 # Note: pass the final command to swaymsg so that the resulting window can be opened
 # on the original workspace that the command was run on.
@@ -260,8 +260,10 @@ bindsym $mod+r mode "resize"
 # the trick, it's all in the `wordexp(3)`.
 #
 
+# wacky stuff
 input * {
     xkb_layout "latam"
+    xkb_options caps:escape
 }
 
 include '$(/usr/libexec/sway/layered-include "/usr/share/sway/config.d/*.conf" "/etc/sway/config.d/*.conf" "${XDG_CONFIG_HOME:-$HOME/.config}/sway/config.d/*.conf")'
